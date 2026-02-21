@@ -144,4 +144,13 @@ const countryList = {
   TOP: "TO",
   TRY: "TR",
   TTD: "TT",
+  TWD: "TW",
+  TZS: "TZ",
+  UAH: "UA",
+  UGX: "UG",
+  USD: "US",
+  UYU: "UY",
+  UZS: "UZ",
+  VEF: "VE",
+  VND: "VN",
 };
