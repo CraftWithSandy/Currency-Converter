@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Coverter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1 class="heading">Currency Converter</h1>
+<form>
+    <div class="amount">
+        <p>Enter Amount : </p>
+        <input type="text" value="100">
+    </div>
+    <div class="dropdowns">
+    <div class="fromselect">
+        <p>From</p>
+        <img class="fromFlag" src="https://flagsapi.com/US/flat/64.png" alt="flag">
+        <select name="from">
+        </select>
+    </div>
+    <div class="toselect">
+        <p>To</p>
+        <img class="toFlag" src="https://flagsapi.com/IN/flat/64.png" alt="flag">
+        <select name="to">
+        </select>
+    </div>
+    </div>
+    <div class="result">
+        <p class="resultmsg">Exchange Rate :</p>
+        <input type="text" id="result">
+        <button>Get Exchange Rate</button>
+    </div>
+</form>
+</div>
+    <script src="countries.js"></script>
+    <script src="first.js"></script>
+</body>
+</html>
