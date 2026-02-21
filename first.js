@@ -1,4 +1,4 @@
-let converterUrl = "https://api.frankfurter.app/latest?";
+let converterUrl = "https://api.exchangerate-api.com/v4/latest/";
 let fromFlag = document.querySelector(".fromFlag");
 let toFlag = document.querySelector(".toFlag");
 let selects = document.querySelectorAll("select");
@@ -56,7 +56,7 @@ form.addEventListener("submit", async (evt) => {
         return;
     }
     else {
-        let newUrl = `${converterUrl}amount=${amountVal}&from=${fromCurr.value}&to=${toCurr.value}`;
+        let newUrl = `${converterUrl}${fromCurr.value}`;
         try {
             let response = await fetch(newUrl);
             if (!response.ok) {
@@ -64,11 +64,13 @@ form.addEventListener("submit", async (evt) => {
             }
             let data = await response.json();
             let rate = data.rates[toCurr.value];
-            result.value = rate.toFixed(3);
+            if(!rate) {
+                throw new Error("Country not found in API response!!!");
+            }
+            result.value = (amountVal*rate).toFixed(3);
         }
         catch (error) {
-            alert("Something went wrong");
-            console.log(error);
+            alert(error.message);
         }
     }
     btn.innerText = "Get Exchange Rate";
